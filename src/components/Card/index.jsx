@@ -6,7 +6,9 @@ const Card = () => {
       return (
             <div className={styles.body}>
                   <div className={styles.card__container}>
-                        <Title></Title>
+                        <div>
+                              <Title></Title>
+                        </div>
                   </div>
             </div>
       )
