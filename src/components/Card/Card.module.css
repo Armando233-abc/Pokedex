@@ -11,7 +11,9 @@
 
 .card__container {
       display: flex;
+
+      justify-content: space-around;
+      
       width: 500px;
       background-color: bisque;
-      padding: 20px;
 }
