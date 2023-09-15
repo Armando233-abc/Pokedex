@@ -1,0 +1,14 @@
+.body {
+      display: flex;
+
+      margin: auto;
+
+      justify-content: center;
+      align-items: center;
+
+      height: 100vh;
+}
+
+.card__container {
+      width: 200px;
+}
