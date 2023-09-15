@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Card.module.css'
-import {Title, PokeInput} from '../index'
+import { Title, PokeInput, SearchButton } from '../index'
 
 const Card = () => {
       return (
@@ -9,6 +9,7 @@ const Card = () => {
                         <div>
                               <Title></Title>
                               <PokeInput></PokeInput>
+                              <SearchButton></SearchButton>
                         </div>
                   </div>
             </div>
