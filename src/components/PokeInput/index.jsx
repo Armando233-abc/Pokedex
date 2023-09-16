@@ -1,9 +1,9 @@
 import React from 'react'
 
-const PokeInput = () => {
+const PokeInput = ({setNomePokemon}) => {
   return (
     <div>
-      <input type="text" />
+      <input type="text" onChange={(e)=>{setNomePokemon(e.target.value)}}/>
     </div>
   )
 }

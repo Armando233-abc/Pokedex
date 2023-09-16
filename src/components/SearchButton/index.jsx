@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SearchButton = () => {
+const SearchButton = ({ search }) => {
   return (
     <div>
-      <button>cerca</button>
+      <button onClick={() => { search()}}>cerca</button>
     </div>
   )
 }
