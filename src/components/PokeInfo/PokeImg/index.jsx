@@ -1,10 +1,13 @@
 import React from 'react'
-import styles from './PokeInfo.module.css'
+import styles from './PokeImg.module.css'
 
-const pokeImg = () => {
+const PokeImg = ({ imgSrc }) => {
+      
   return (
-    <div>index</div>
+        <div>
+              <img src={imgSrc.front_default} alt="" />
+      </div>
   )
 }
 
-export default pokeImg
+export default PokeImg

@@ -5,7 +5,10 @@ import { Title, PokeInput, SearchButton, PokeInfo } from '../index'
 const Card = () => {
       const [nomePokemon, setNomePokemon] = useState("");
       const [searchCount, setSearchCount] = useState(0);
-      const [data, setData] = useState({})
+      const [data, setData] = useState({ 
+            name : "",
+            sprites : ""
+      })
 
       useEffect(() => {
             const cerca = async () => {
