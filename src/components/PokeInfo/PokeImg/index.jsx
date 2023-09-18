@@ -5,7 +5,7 @@ const PokeImg = ({ imgSrc }) => {
       
   return (
         <div>
-              <img src={imgSrc.front_default} alt="" />
+              <img src={imgSrc} alt="" />
       </div>
   )
 }
