@@ -7,20 +7,21 @@ const Card = () => {
       const [searchCount, setSearchCount] = useState(0);
       const [data, setData] = useState({})
 
-      const increase = ()=>{
-            setSearchCount(searchCount + 1)
-      }
-
-      useEffect( () => {
+      useEffect(() => {
             const cerca = async () => {
-                  await fetch("https://pokeapi.co/api/v2/pokemon/" + nomePokemon)
-                        .then(response => response.json())
-                        .then(data => setData(data))
+                  if (nomePokemon != "") {
+                        await fetch("https://pokeapi.co/api/v2/pokemon/" + nomePokemon)
+                              .then(response => response.json())
+                              .then(data => setData(data))
+                  }
             }
 
             cerca()
       }, [searchCount])
 
+      const increase = () => {
+            setSearchCount(() => searchCount + 1)
+      }
 
       return (
             <div className={styles.body}>
