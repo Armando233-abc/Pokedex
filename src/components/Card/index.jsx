@@ -7,7 +7,10 @@ const Card = () => {
       const [searchCount, setSearchCount] = useState(0);
       const [data, setData] = useState({ 
             name : "",
-            sprites : ""
+            sprites : "",
+            species : {
+                  url: ""
+            }
       })
 
       useEffect(() => {
