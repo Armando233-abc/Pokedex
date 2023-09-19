@@ -5,13 +5,15 @@
       width: 100%;
 
       margin-top: 10px;
+      background: linear-gradient(15deg, #cad5b5 64%, #dde2d4 70%, #dde2d4 81%, #fff 86%, #dde2d4 89%, #dde2d4 100%);
       border: inset 3px #9aa28b;
 }
 
 .PokeDescription__container p{
       font-family: 'Cutive Mono', monospace;
+      color: #000000c7;
       font-size: 1.1rem;
-      font-weight: bold;
+      font-weight: bolder;
       margin-top: 5px;
       text-align: center;
 }

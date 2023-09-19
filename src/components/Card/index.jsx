@@ -6,10 +6,10 @@ const Card = () => {
       const [nomePokemon, setNomePokemon] = useState("dragonite");
       const [searchCount, setSearchCount] = useState(0);
       const [error, setError] = useState(0);
-      const [data, setData] = useState({ 
-            name : "",
-            sprites : "",
-            species : {
+      const [data, setData] = useState({
+            name: "",
+            sprites: "",
+            species: {
                   url: ""
             }
       })
@@ -37,9 +37,11 @@ const Card = () => {
                   <div className={styles.card__container}>
                         <div>
                               <Title></Title>
-                              <PokeInput setNomePokemon={setNomePokemon}></PokeInput>
-                              <SearchButton increase={increase}></SearchButton>
-                              <Error isError = {error}></Error>
+                              <div className = {styles.form}>
+                                    <PokeInput setNomePokemon={setNomePokemon}></PokeInput>
+                                    <SearchButton increase={increase}></SearchButton>
+                              </div>
+                              <Error isError={error}></Error>
                         </div>
                         <div>
                               <PokeInfo data={data}></PokeInfo>

@@ -1,9 +1,9 @@
 import React from 'react'
-
+import styles from './SearchButton.module.css'
 const SearchButton = ({ increase}) => {
   return (
-    <div>
-      <button onClick={() => { increase()}}>cerca</button>
+    <div className={styles.button}>
+      <button onClick={() => { increase()}}>🔍</button>
     </div>
   )
 }
