@@ -4,7 +4,7 @@ import styles from './PokeName.module.css'
 const PokeName = ({nome}) => {
   return (
     <div className={styles.name__container}>
-      <h1>{nome}</h1> 
+      <h3>{nome}</h3> 
     </div>
   )
 }

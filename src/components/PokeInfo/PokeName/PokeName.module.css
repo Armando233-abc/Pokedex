@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700|Nunito:600');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .name__container{
-      font-family: Cinzel Decorative, sans-serif;
+      width: 100%;
+      font-family: 'Open Sans', sans-serif;
+      
 }
 
-.name__container h1{
-      margin: 5px;
-
-      color: #ffffff;
+.name__container h3{
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-size: 1rem;
 }

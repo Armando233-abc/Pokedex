@@ -24,8 +24,8 @@ const PokeInfo = ({ data }) => {
       return (
             <div className={styles.pokeInfo__container}>
                   <div className={styles.card__container}>
-                        <PokeImg imgSrc={data.sprites.front_default}></PokeImg>
                         <PokeName nome={data.name}></PokeName>
+                        <PokeImg imgSrc={data.sprites.front_default}></PokeImg>
                         <PokeDescription description={description}></PokeDescription>
                   </div>
             </div>

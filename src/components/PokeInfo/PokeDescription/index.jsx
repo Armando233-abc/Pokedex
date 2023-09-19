@@ -1,8 +1,13 @@
 import React from 'react'
+import styles from './PokeDescription.module.css'
 
-const PokeDescription = ({description}) => {
+const PokeDescription = ({ description }) => {
       return (
-            <div>{description}</div>
+            <div className={styles.PokeDescription__container}>
+                  <p>
+                        {description}
+                  </p>
+            </div>
       )
 }
 
