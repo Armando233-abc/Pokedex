@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import styles from './Card.module.css'
-import { Title, PokeInput, SearchButton, PokeInfo } from '../index'
+import { Title, PokeInput, SearchButton, PokeInfo, Error } from '../index'
 
 const Card = () => {
       const [nomePokemon, setNomePokemon] = useState("dragonite");
       const [searchCount, setSearchCount] = useState(0);
+      const [error, setError] = useState(0);
       const [data, setData] = useState({ 
             name : "",
             sprites : "",
@@ -19,6 +20,8 @@ const Card = () => {
                         await fetch("https://pokeapi.co/api/v2/pokemon/" + nomePokemon)
                               .then(response => response.json())
                               .then(data => setData(data))
+                              .then(() => setError(0))
+                              .catch(() => setError(1))
                   }
             }
 
@@ -36,6 +39,7 @@ const Card = () => {
                               <Title></Title>
                               <PokeInput setNomePokemon={setNomePokemon}></PokeInput>
                               <SearchButton increase={increase}></SearchButton>
+                              <Error isError = {error}></Error>
                         </div>
                         <div>
                               <PokeInfo data={data}></PokeInfo>

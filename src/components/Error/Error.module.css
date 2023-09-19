@@ -1,0 +1,12 @@
+.errorContainer{
+      background-color: yellow;
+
+      color: red;
+
+      padding: 10px;
+      margin-top: 50%;
+}
+
+.hidden{
+     display: none;
+}
