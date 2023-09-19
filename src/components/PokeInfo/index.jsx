@@ -9,11 +9,11 @@ const PokeInfo = ({ data }) => {
 
       useEffect(() => {
             const descrizione = async () => {
-                  if (data.species.url != ""){
+                  if (data.species.url != "") {
                         await fetch(data.species.url)
                               .then(response => response.json())
-                              .then(json => ( json.flavor_text_entries.map((id)=>{
-                                    if(id.language.name === "it"){
+                              .then(json => (json.flavor_text_entries.map((id) => {
+                                    if (id.language.name === "it") {
                                           setDescription(id.flavor_text)
                                     }
                               })))
@@ -23,9 +23,11 @@ const PokeInfo = ({ data }) => {
       })
       return (
             <div className={styles.pokeInfo__container}>
-                  <PokeImg imgSrc={data.sprites.front_default}></PokeImg>
-                  <PokeName nome={data.name}></PokeName>
-                  <PokeDescription description={description}></PokeDescription>
+                  <div className={styles.card__container}>
+                        <PokeImg imgSrc={data.sprites.front_default}></PokeImg>
+                        <PokeName nome={data.name}></PokeName>
+                        <PokeDescription description={description}></PokeDescription>
+                  </div>
             </div>
       )
 }

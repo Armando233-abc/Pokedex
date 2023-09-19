@@ -1,5 +1,12 @@
-.pokeInfo__container{
-      width: 100px;
+.pokeInfo__container {
       height: 100%;
-      background-color: red;
+}
+
+.card__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin: auto;
+      width: 70%;
 }
