@@ -3,7 +3,7 @@ import styles from './Card.module.css'
 import { Title, PokeInput, SearchButton, PokeInfo } from '../index'
 
 const Card = () => {
-      const [nomePokemon, setNomePokemon] = useState("");
+      const [nomePokemon, setNomePokemon] = useState("dragonite");
       const [searchCount, setSearchCount] = useState(0);
       const [data, setData] = useState({ 
             name : "",
