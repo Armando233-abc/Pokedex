@@ -4,7 +4,7 @@ import styles from './PokeImg.module.css'
 const PokeImg = ({ imgSrc }) => {
       
   return (
-        <div>
+        <div className={styles.pokeImg__container}>
               <img src={imgSrc} alt="" />
       </div>
   )

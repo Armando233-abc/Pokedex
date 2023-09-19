@@ -8,5 +8,9 @@
       align-items: center;
 
       margin: auto;
+      padding: 10px;
       width: 70%;
+
+      border-radius: 10px;
+      border: 10px solid yellow;
 }

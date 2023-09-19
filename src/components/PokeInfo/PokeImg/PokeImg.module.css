@@ -1,0 +1,11 @@
+.pokeImg__container{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      background-color: #000000;
+}
+
+.pokeImg__container img{
+      width: 150px;
+      height: 150px;
+}
