@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 
+.title__container{
+      margin-bottom: 10px;
+}
 .title__container h1{
       font-family: 'DM Serif Display', serif;
-      margin: 10px 0px 10px 0px;
+      margin: 0px;
+}
+
+.title__container p{
+      margin: 0;
 }
