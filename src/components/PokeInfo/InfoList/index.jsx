@@ -16,7 +16,7 @@ const InfoList = ({ data }) => {
                         </li>
                         <li className={styles.data}>
                               <p className={styles.info}>tipo</p>
-                              <p className={styles.realData}>{data.tipo.map((s) => { return s + ' ' })}</p>
+                              <p className={styles.realData}>{data.tipo.map((s) =>   s + ' ')}</p>
                         </li>
                         <li className={styles.data}>
                               <p className={styles.info}>B.S.</p>

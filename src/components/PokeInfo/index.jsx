@@ -6,22 +6,21 @@ import PokeDescription from './PokeDescription'
 import InfoList from './InfoList'
 import PropTypes from "prop-types";
 
-const PokeInfo = ({ data, isError }) => {
-      const [description, setDescription] = useState("")
+const PokeInfo = ({ data, isError, nome }) => {
 
+      const [description, setDescription] = useState("")
+      const descrizione = async () => {
+            await fetch(data.species.url)
+                  .then(response => response.json())
+                  .then(json => (json.flavor_text_entries.map((id) => {
+                        if (id.language.name === "it") {
+                              setDescription(id.flavor_text)
+                        }
+                  }
+                  )))
+      }
 
       useEffect(() => {
-            const descrizione = async () => {
-                  await fetch(data.species.url)
-                        .then(response => response.json())
-                        .then(json => (json.flavor_text_entries.map((id) => {
-                              if (id.language.name === "it") {
-                                    setDescription(id.flavor_text)
-                              }
-                        }
-                        )))
-            }
-
             if (data.species.url != "#" && data.species.url != "") {
                   descrizione()
             }
@@ -46,8 +45,8 @@ const PokeInfo = ({ data, isError }) => {
                   <div className={styles.card__container}>
                         <div className={styles.header__container}>
                               <div className={styles.imgTitle__container}>
-                                    <PokeName nome={data.name}></PokeName>
-                                    <PokeImg imgSrc={data.sprites.front_default}></PokeImg>
+                                    <PokeName nome={data.name} />
+                                    <PokeImg imgSrc={data.sprites.front_default} />
                               </div>
                               <div className={styles.Data__container}>
                                     <InfoList data={{
@@ -55,10 +54,10 @@ const PokeInfo = ({ data, isError }) => {
                                           "nome": data.name,
                                           "tipo": data.types.map((value) => { return value.type.name }),
                                           "statistiche_base": data.base_experience
-                                    }}></InfoList>
+                                    }} />
                               </div>
                         </div>
-                        <PokeDescription description={isError ? data.error : description}></PokeDescription>
+                        <PokeDescription description={isError ? data.error : description} />
                   </div>
             </div>
       )

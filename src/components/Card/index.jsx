@@ -13,23 +13,22 @@ const Card = () => {
             types: []
       })
 
-      useEffect(() => {
-            const cerca = async () => {
-                  if (nomePokemon != "") {
-                        setError(0)
-                        await fetch("https://pokeapi.co/api/v2/pokemon/" + nomePokemon)
-                              .then(response => response.json())
-                              .then(data => setData(data))
-                              .catch(() => setError(1))
-                  }
+      const cerca = async () => {
+            if (nomePokemon != "") {
+                  setError(0)
+                  await fetch("https://pokeapi.co/api/v2/pokemon/" + nomePokemon)
+                        .then(response => response.json())
+                        .then(data => setData(data))
+                        .catch(() => setError(1))
             }
+      }
 
+      useEffect(() => {
             cerca()
-
       }, [searchCount])
 
       const increase = () => {
-            setSearchCount(() => searchCount + 1)
+            setSearchCount(() => 1)
       }
 
       return (
@@ -43,7 +42,7 @@ const Card = () => {
                               </div>
                         </div>
                         <div className={styles.size}>
-                              <PokeInfo data={data} isError={error} ></PokeInfo>
+                              <PokeInfo data={data} isError={error} nome="Armando"></PokeInfo>
                         </div>
                   </div>
             </div>
