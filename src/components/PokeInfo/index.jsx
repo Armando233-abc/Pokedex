@@ -4,6 +4,7 @@ import PokeImg from './PokeImg'
 import PokeName from './PokeName'
 import PokeDescription from './PokeDescription'
 import InfoList from './InfoList'
+import PropTypes from "prop-types";
 
 const PokeInfo = ({ data, isError }) => {
       const [description, setDescription] = useState("")
@@ -66,6 +67,6 @@ const PokeInfo = ({ data, isError }) => {
 export default PokeInfo
 
 PokeInfo.propTypes = {
-      data: PropTypes.obj,
-      isError: PropTypes.bool
+      data: PropTypes.object,
+      isError: PropTypes.number
 };

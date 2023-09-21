@@ -30,5 +30,5 @@ const InfoList = ({ data }) => {
 export default InfoList
 
 InfoList.propTypes = {
-      data: PropTypes.obj,
+      data: PropTypes.object,
 };
