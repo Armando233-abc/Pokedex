@@ -5,7 +5,7 @@ import PokeName from './PokeName'
 import PokeDescription from './PokeDescription'
 import InfoList from './InfoList'
 
-const PokeInfo = ({ data }) => {
+const PokeInfo = ({ data, isError }) => {
       const [description, setDescription] = useState("")
 
       useEffect(() => {
@@ -19,9 +19,23 @@ const PokeInfo = ({ data }) => {
                                     }
                               })))
                   }
+
             }
             descrizione()
       })
+
+      if (isError) {
+            data = {
+                  name: "Pokemon non trovato",
+                  sprites: {
+                        front_default: "https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Image-File.png"
+                  },
+                  species: { url: "" },
+                  types: [],
+                  error: "non siamo riusciti a trovare il pokemon"
+            }
+      }
+
       return (
             <div className={styles.pokeInfo__container}>
                   <div className={styles.card__container}>
@@ -32,14 +46,14 @@ const PokeInfo = ({ data }) => {
                               </div>
                               <div className={styles.Data__container}>
                                     <InfoList data={{
-                                          "numero" : data.id,
+                                          "numero": data.id,
                                           "nome": data.name,
-                                          "tipo": data.types.map((as)=>{return as.type.name}),
+                                          "tipo": data.types.map((as) => { return as.type.name }),
                                           "esperienza_base": data.base_experience
                                     }}></InfoList>
                               </div>
                         </div>
-                        <PokeDescription description={description}></PokeDescription>
+                        <PokeDescription description={isError ? data.error : description}></PokeDescription>
                   </div>
             </div>
       )

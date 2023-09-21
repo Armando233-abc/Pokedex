@@ -9,22 +9,21 @@ const Card = () => {
       const [data, setData] = useState({
             name: "",
             sprites: "",
-            species: {url: ""},
+            species: { url: "" },
             types: []
       })
 
       useEffect(() => {
             const cerca = async () => {
-                  if (nomePokemon != "") {
-                        await fetch("https://pokeapi.co/api/v2/pokemon/" + nomePokemon)
-                              .then(response => response.json())
-                              .then(data => setData(data))
-                              .then(() => setError(0))
-                              .catch(() => setError(1))
-                  }
+                  setError(0)
+                  await fetch("https://pokeapi.co/api/v2/pokemon/" + nomePokemon)
+                        .then(response => response.json())
+                        .then(data => setData(data))
+                        .catch(() => setError(1))
             }
 
             cerca()
+
       }, [searchCount])
 
       const increase = () => {
@@ -36,14 +35,13 @@ const Card = () => {
                   <div className={styles.card__container}>
                         <div>
                               <Title></Title>
-                              <div className = {styles.form}>
+                              <div className={styles.form}>
                                     <PokeInput setNomePokemon={setNomePokemon}></PokeInput>
                                     <SearchButton increase={increase}></SearchButton>
                               </div>
-                              <Error isError={error}></Error>
                         </div>
-                        <div>
-                              <PokeInfo data={data}></PokeInfo>
+                        <div className={styles.size}>
+                              <PokeInfo data={data} isError={error}></PokeInfo>
                         </div>
                   </div>
             </div>
