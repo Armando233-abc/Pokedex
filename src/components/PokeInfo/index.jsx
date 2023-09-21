@@ -53,7 +53,7 @@ const PokeInfo = ({ data, isError }) => {
                                     <InfoList data={{
                                           "numero": data.id,
                                           "nome": data.name,
-                                          "tipo": data.types.map((as) => { return as.type.name }),
+                                          "tipo": data.types.map((value) => { return value.type.name }),
                                           "statistiche_base": data.base_experience
                                     }}></InfoList>
                               </div>
