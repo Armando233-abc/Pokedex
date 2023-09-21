@@ -8,33 +8,37 @@ import InfoList from './InfoList'
 const PokeInfo = ({ data, isError }) => {
       const [description, setDescription] = useState("")
 
+
       useEffect(() => {
             const descrizione = async () => {
-                  if (data.species.url != "") {
-                        await fetch(data.species.url)
-                              .then(response => response.json())
-                              .then(json => (json.flavor_text_entries.map((id) => {
-                                    if (id.language.name === "it") {
-                                          setDescription(id.flavor_text)
-                                    }
-                              })))
-                  }
-
+                  await fetch(data.species.url)
+                        .then(response => response.json())
+                        .then(json => (json.flavor_text_entries.map((id) => {
+                              if (id.language.name === "it") {
+                                    setDescription(id.flavor_text)
+                              }
+                        }
+                        )))
             }
-            descrizione()
-      })
+
+            if (data.species.url != "#" && data.species.url != "") {
+                  descrizione()
+            }
+      }, [data])
 
       if (isError) {
             data = {
-                  name: "Pokemon non trovato",
+                  name: "#",
                   sprites: {
-                        front_default: "https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Image-File.png"
+                        front_default: "https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Image-File.png",
                   },
-                  species: { url: "" },
-                  types: [],
-                  error: "non siamo riusciti a trovare il pokemon"
+                  numero: "#",
+                  types: [{ type: { name: "#" } }],
+                  base_experience: "#",
+                  error: "Ci dispiace, ma non siamo riusciti a trovare il pokemon"
             }
       }
+
 
       return (
             <div className={styles.pokeInfo__container}>
@@ -49,7 +53,7 @@ const PokeInfo = ({ data, isError }) => {
                                           "numero": data.id,
                                           "nome": data.name,
                                           "tipo": data.types.map((as) => { return as.type.name }),
-                                          "esperienza_base": data.base_experience
+                                          "statistiche_base": data.base_experience
                                     }}></InfoList>
                               </div>
                         </div>

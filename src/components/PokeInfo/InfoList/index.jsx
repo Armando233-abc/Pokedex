@@ -20,7 +20,7 @@ const InfoList = ({ data }) => {
                         </li>
                         <li className={styles.data}>
                               <p className={styles.info}>B.S.</p>
-                              <p className={styles.realData}>{data.esperienza_base}</p>
+                              <p className={styles.realData}>{data.statistiche_base}</p>
                         </li>
                   </ul>
             </div>
