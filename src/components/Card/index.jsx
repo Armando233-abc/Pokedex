@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from './Card.module.css'
-import { Title, PokeInput, SearchButton, PokeInfo, Error } from '../index'
+import { Title, PokeInput, SearchButton, PokeInfo } from '../index'
 
 const Card = () => {
       const [nomePokemon, setNomePokemon] = useState("dragonite");
