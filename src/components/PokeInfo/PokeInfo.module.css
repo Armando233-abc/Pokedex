@@ -16,3 +16,16 @@
 
       background-color: #e61515;
 }
+
+.header__container{
+      display: flex;
+      width: 100%;
+}
+
+.imgTitle__container{
+      width: 45%;
+}
+
+.Data__container{
+      width: 55%;
+}

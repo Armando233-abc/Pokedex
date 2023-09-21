@@ -1,0 +1,24 @@
+.data__container{
+      list-style-type: none;
+      padding: 0;
+      padding-left: 10px;
+      margin-top: 0;
+}
+
+
+.data{
+      display: flex;
+      text-align: center;
+}
+
+.data .info{
+      width: 40%;
+      margin: 0;
+      background-color: antiquewhite;
+      border-radius: 40px;
+}
+
+.data .realData{
+      width: 60%;
+      margin: 0;
+}

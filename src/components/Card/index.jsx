@@ -9,9 +9,8 @@ const Card = () => {
       const [data, setData] = useState({
             name: "",
             sprites: "",
-            species: {
-                  url: ""
-            }
+            species: {url: ""},
+            types: []
       })
 
       useEffect(() => {
