@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './PokeDescription.module.css'
+import PropTypes from "prop-types";
 
 const PokeDescription = ({ description }) => {
       return (
@@ -12,3 +13,7 @@ const PokeDescription = ({ description }) => {
 }
 
 export default PokeDescription
+
+PokeDescription.propTypes = {
+      description: PropTypes.string,
+};

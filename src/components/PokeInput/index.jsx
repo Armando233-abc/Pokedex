@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Input.module.css'
+import PropTypes from "prop-types";
 
 const PokeInput = ({setNomePokemon}) => {
   return (
@@ -10,3 +11,7 @@ const PokeInput = ({setNomePokemon}) => {
 }
 
 export default PokeInput;
+
+PokeInput.propTypes = {
+  setNomePokemon: PropTypes.func
+}

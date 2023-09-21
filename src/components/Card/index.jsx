@@ -43,7 +43,7 @@ const Card = () => {
                               </div>
                         </div>
                         <div className={styles.size}>
-                              <PokeInfo data={data} isError={error} searchCount={searchCount}></PokeInfo>
+                              <PokeInfo data={data} isError={error} ></PokeInfo>
                         </div>
                   </div>
             </div>

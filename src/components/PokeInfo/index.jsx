@@ -64,3 +64,8 @@ const PokeInfo = ({ data, isError }) => {
 }
 
 export default PokeInfo
+
+PokeInfo.propTypes = {
+      data: PropTypes.obj,
+      isError: PropTypes.bool
+};

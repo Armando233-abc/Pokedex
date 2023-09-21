@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './InfoList.module.css'
-
+import PropTypes from "prop-types";
 const InfoList = ({ data }) => {
 
       return (
@@ -16,7 +16,7 @@ const InfoList = ({ data }) => {
                         </li>
                         <li className={styles.data}>
                               <p className={styles.info}>tipo</p>
-                              <p className={styles.realData}>{data.tipo.map((s) => {return s + ' '}) }</p>
+                              <p className={styles.realData}>{data.tipo.map((s) => { return s + ' ' })}</p>
                         </li>
                         <li className={styles.data}>
                               <p className={styles.info}>B.S.</p>
@@ -28,3 +28,7 @@ const InfoList = ({ data }) => {
 }
 
 export default InfoList
+
+InfoList.propTypes = {
+      data: PropTypes.obj,
+};
